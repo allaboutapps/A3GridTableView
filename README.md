@@ -27,7 +27,7 @@ You can find all optional dataSource and delegate methods like `heightForRowAtIn
 The dataSource method `cellForRowAtIndexPath:` requires a **A3GridTableViewCell** (or a subclass) which properties can also be seen in [A3GridTableViewCell.h header](https://github.com/allaboutapps/A3GridTableView/blob/master/A3GridTableView/A3GridTableViewCell.h) file.
  
 #License:
-[See our BSD 3-Clause License](https://github.com/allaboutapps/A3GridView/blob/master/LICENSE.txt)
+[See our BSD 3-Clause License](https://github.com/allaboutapps/A3GridTableView/blob/master/LICENSE.txt)
 
 #Contribute:
 Feel free to fork and make pull requests! We are also very happy if you tell us about your app(s) which use this control.  

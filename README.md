@@ -22,9 +22,9 @@ Set your ViewController as dataSource and delegate of the **A3GridTableView** an
     - (NSInteger)A3GridTableView:(A3GridTableView *) tableView numberOfRowsInSection:(NSInteger) section;
     - (A3GridTableViewCell *)A3GridTableView:(A3GridTableView *)gridTableView cellForRowAtIndexPath:(NSIndexPath *)indexPath;
 
-You can find all optional dataSource and delegate methods like `heightForRowAtIndexPath:` well documented with explanations in the [A3GridTableView.h header](https://github.com/allaboutapps/A3GridView/blob/master/A3GridTableView/A3GridTableView.h) file.  
+You can find all optional dataSource and delegate methods like `heightForRowAtIndexPath:` well documented with explanations in the [A3GridTableView.h header](https://github.com/allaboutapps/A3GridTableView/blob/master/A3GridTableView/A3GridTableView.h) file.  
 
-The dataSource method `cellForRowAtIndexPath:` requires a **A3GridTableViewCell** (or a subclass) which properties can also be seen in [A3GridTableViewCell.h header](https://github.com/allaboutapps/A3GridView/blob/master/A3GridTableView/A3GridTableViewCell.h) file.
+The dataSource method `cellForRowAtIndexPath:` requires a **A3GridTableViewCell** (or a subclass) which properties can also be seen in [A3GridTableViewCell.h header](https://github.com/allaboutapps/A3GridTableView/blob/master/A3GridTableView/A3GridTableViewCell.h) file.
  
 #License:
 [See our BSD 3-Clause License](https://github.com/allaboutapps/A3GridView/blob/master/LICENSE.txt)

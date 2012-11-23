@@ -1,0 +1,337 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8808829A165F8A0C00CC71CE /* cellBG-highlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = 88088298165F8A0C00CC71CE /* cellBG-highlighted.png */; };
+		8808829B165F8A0C00CC71CE /* cellBG-normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 88088299165F8A0C00CC71CE /* cellBG-normal.png */; };
+		8897C0EE16240F4200DABEDF /* A3GridTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8897C0EB16240F4200DABEDF /* A3GridTableView.m */; };
+		8897C0EF16240F4200DABEDF /* A3GridTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8897C0ED16240F4200DABEDF /* A3GridTableViewCell.m */; };
+		88BDCC411615CD2E00BF7A03 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88BDCC401615CD2E00BF7A03 /* UIKit.framework */; };
+		88BDCC431615CD2E00BF7A03 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88BDCC421615CD2E00BF7A03 /* Foundation.framework */; };
+		88BDCC451615CD2E00BF7A03 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88BDCC441615CD2E00BF7A03 /* CoreGraphics.framework */; };
+		88BDCC4B1615CD2E00BF7A03 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 88BDCC491615CD2E00BF7A03 /* InfoPlist.strings */; };
+		88BDCC4D1615CD2E00BF7A03 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 88BDCC4C1615CD2E00BF7A03 /* main.m */; };
+		88BDCC511615CD2E00BF7A03 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 88BDCC501615CD2E00BF7A03 /* AppDelegate.m */; };
+		88BDCC531615CD2E00BF7A03 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 88BDCC521615CD2E00BF7A03 /* Default.png */; };
+		88BDCC551615CD2E00BF7A03 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 88BDCC541615CD2E00BF7A03 /* Default@2x.png */; };
+		88BDCC571615CD2E00BF7A03 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 88BDCC561615CD2E00BF7A03 /* Default-568h@2x.png */; };
+		88BDCC5A1615CD2E00BF7A03 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88BDCC591615CD2E00BF7A03 /* ViewController.m */; };
+		88BDCC5D1615CD2E00BF7A03 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88BDCC5B1615CD2E00BF7A03 /* ViewController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		88088298165F8A0C00CC71CE /* cellBG-highlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cellBG-highlighted.png"; sourceTree = "<group>"; };
+		88088299165F8A0C00CC71CE /* cellBG-normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cellBG-normal.png"; sourceTree = "<group>"; };
+		8897C0EA16240F4200DABEDF /* A3GridTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = A3GridTableView.h; sourceTree = "<group>"; };
+		8897C0EB16240F4200DABEDF /* A3GridTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = A3GridTableView.m; sourceTree = "<group>"; };
+		8897C0EC16240F4200DABEDF /* A3GridTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = A3GridTableViewCell.h; sourceTree = "<group>"; };
+		8897C0ED16240F4200DABEDF /* A3GridTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = A3GridTableViewCell.m; sourceTree = "<group>"; };
+		88BDCC3C1615CD2E00BF7A03 /* A3GridTableViewSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = A3GridTableViewSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		88BDCC401615CD2E00BF7A03 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		88BDCC421615CD2E00BF7A03 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		88BDCC441615CD2E00BF7A03 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		88BDCC481615CD2E00BF7A03 /* A3GridTableViewSample-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "A3GridTableViewSample-Info.plist"; sourceTree = "<group>"; };
+		88BDCC4A1615CD2E00BF7A03 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		88BDCC4C1615CD2E00BF7A03 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		88BDCC4E1615CD2E00BF7A03 /* A3GridTableViewSample-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "A3GridTableViewSample-Prefix.pch"; sourceTree = "<group>"; };
+		88BDCC4F1615CD2E00BF7A03 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		88BDCC501615CD2E00BF7A03 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		88BDCC521615CD2E00BF7A03 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		88BDCC541615CD2E00BF7A03 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		88BDCC561615CD2E00BF7A03 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		88BDCC581615CD2E00BF7A03 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		88BDCC591615CD2E00BF7A03 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		88BDCC5C1615CD2E00BF7A03 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		88BDCC391615CD2E00BF7A03 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				88BDCC411615CD2E00BF7A03 /* UIKit.framework in Frameworks */,
+				88BDCC431615CD2E00BF7A03 /* Foundation.framework in Frameworks */,
+				88BDCC451615CD2E00BF7A03 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8897C0E916240F4200DABEDF /* A3GridTableView */ = {
+			isa = PBXGroup;
+			children = (
+				8897C0EA16240F4200DABEDF /* A3GridTableView.h */,
+				8897C0EB16240F4200DABEDF /* A3GridTableView.m */,
+				8897C0EC16240F4200DABEDF /* A3GridTableViewCell.h */,
+				8897C0ED16240F4200DABEDF /* A3GridTableViewCell.m */,
+			);
+			path = A3GridTableView;
+			sourceTree = SOURCE_ROOT;
+		};
+		88BDCC311615CD2E00BF7A03 = {
+			isa = PBXGroup;
+			children = (
+				88BDCC461615CD2E00BF7A03 /* A3GridTableViewSample */,
+				88BDCC3F1615CD2E00BF7A03 /* Frameworks */,
+				88BDCC3D1615CD2E00BF7A03 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		88BDCC3D1615CD2E00BF7A03 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				88BDCC3C1615CD2E00BF7A03 /* A3GridTableViewSample.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		88BDCC3F1615CD2E00BF7A03 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				88BDCC401615CD2E00BF7A03 /* UIKit.framework */,
+				88BDCC421615CD2E00BF7A03 /* Foundation.framework */,
+				88BDCC441615CD2E00BF7A03 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		88BDCC461615CD2E00BF7A03 /* A3GridTableViewSample */ = {
+			isa = PBXGroup;
+			children = (
+				88BDCC4F1615CD2E00BF7A03 /* AppDelegate.h */,
+				88BDCC501615CD2E00BF7A03 /* AppDelegate.m */,
+				88BDCC581615CD2E00BF7A03 /* ViewController.h */,
+				88BDCC591615CD2E00BF7A03 /* ViewController.m */,
+				88BDCC5B1615CD2E00BF7A03 /* ViewController.xib */,
+				8897C0E916240F4200DABEDF /* A3GridTableView */,
+				88BDCC471615CD2E00BF7A03 /* Supporting Files */,
+			);
+			path = A3GridTableViewSample;
+			sourceTree = "<group>";
+		};
+		88BDCC471615CD2E00BF7A03 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				88088298165F8A0C00CC71CE /* cellBG-highlighted.png */,
+				88088299165F8A0C00CC71CE /* cellBG-normal.png */,
+				88BDCC481615CD2E00BF7A03 /* A3GridTableViewSample-Info.plist */,
+				88BDCC491615CD2E00BF7A03 /* InfoPlist.strings */,
+				88BDCC4C1615CD2E00BF7A03 /* main.m */,
+				88BDCC4E1615CD2E00BF7A03 /* A3GridTableViewSample-Prefix.pch */,
+				88BDCC521615CD2E00BF7A03 /* Default.png */,
+				88BDCC541615CD2E00BF7A03 /* Default@2x.png */,
+				88BDCC561615CD2E00BF7A03 /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		88BDCC3B1615CD2E00BF7A03 /* A3GridTableViewSample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 88BDCC601615CD2E00BF7A03 /* Build configuration list for PBXNativeTarget "A3GridTableViewSample" */;
+			buildPhases = (
+				88BDCC381615CD2E00BF7A03 /* Sources */,
+				88BDCC391615CD2E00BF7A03 /* Frameworks */,
+				88BDCC3A1615CD2E00BF7A03 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = A3GridTableViewSample;
+			productName = A3GridTableViewSample;
+			productReference = 88BDCC3C1615CD2E00BF7A03 /* A3GridTableViewSample.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		88BDCC331615CD2E00BF7A03 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = AllAboutApps;
+			};
+			buildConfigurationList = 88BDCC361615CD2E00BF7A03 /* Build configuration list for PBXProject "A3GridTableViewSample" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 88BDCC311615CD2E00BF7A03;
+			productRefGroup = 88BDCC3D1615CD2E00BF7A03 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				88BDCC3B1615CD2E00BF7A03 /* A3GridTableViewSample */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		88BDCC3A1615CD2E00BF7A03 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				88BDCC4B1615CD2E00BF7A03 /* InfoPlist.strings in Resources */,
+				88BDCC531615CD2E00BF7A03 /* Default.png in Resources */,
+				88BDCC551615CD2E00BF7A03 /* Default@2x.png in Resources */,
+				88BDCC571615CD2E00BF7A03 /* Default-568h@2x.png in Resources */,
+				88BDCC5D1615CD2E00BF7A03 /* ViewController.xib in Resources */,
+				8808829A165F8A0C00CC71CE /* cellBG-highlighted.png in Resources */,
+				8808829B165F8A0C00CC71CE /* cellBG-normal.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		88BDCC381615CD2E00BF7A03 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				88BDCC4D1615CD2E00BF7A03 /* main.m in Sources */,
+				88BDCC511615CD2E00BF7A03 /* AppDelegate.m in Sources */,
+				88BDCC5A1615CD2E00BF7A03 /* ViewController.m in Sources */,
+				8897C0EE16240F4200DABEDF /* A3GridTableView.m in Sources */,
+				8897C0EF16240F4200DABEDF /* A3GridTableViewCell.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		88BDCC491615CD2E00BF7A03 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				88BDCC4A1615CD2E00BF7A03 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		88BDCC5B1615CD2E00BF7A03 /* ViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				88BDCC5C1615CD2E00BF7A03 /* en */,
+			);
+			name = ViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		88BDCC5E1615CD2E00BF7A03 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		88BDCC5F1615CD2E00BF7A03 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		88BDCC611615CD2E00BF7A03 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "A3GridTableViewSample/A3GridTableViewSample-Prefix.pch";
+				INFOPLIST_FILE = "A3GridTableViewSample/A3GridTableViewSample-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		88BDCC621615CD2E00BF7A03 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "A3GridTableViewSample/A3GridTableViewSample-Prefix.pch";
+				INFOPLIST_FILE = "A3GridTableViewSample/A3GridTableViewSample-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		88BDCC361615CD2E00BF7A03 /* Build configuration list for PBXProject "A3GridTableViewSample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				88BDCC5E1615CD2E00BF7A03 /* Debug */,
+				88BDCC5F1615CD2E00BF7A03 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		88BDCC601615CD2E00BF7A03 /* Build configuration list for PBXNativeTarget "A3GridTableViewSample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				88BDCC611615CD2E00BF7A03 /* Debug */,
+				88BDCC621615CD2E00BF7A03 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 88BDCC331615CD2E00BF7A03 /* Project object */;
+}

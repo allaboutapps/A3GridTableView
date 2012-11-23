@@ -582,7 +582,6 @@
     
     // get item for offset
     int indexOfCell = [self _sectionIndexForContentOffset:offsetForSection];
-    NSLog(@"indexOfCell %i", indexOfCell);
     
     // don't do anything when there is no item
     if (indexOfCell < 0)

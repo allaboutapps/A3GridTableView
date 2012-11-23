@@ -582,6 +582,7 @@
     
     // get item for offset
     int indexOfCell = [self _sectionIndexForContentOffset:offsetForSection];
+    NSLog(@"indexOfCell %i", indexOfCell);
     
     // don't do anything when there is no item
     if (indexOfCell < 0)
@@ -1174,7 +1175,7 @@
     
     for (int i = 0 ; i < numberOfSections; i++) {
         
-        CGFloat deltaX = fabs(contentOffset.x - _sectionXOrigins[i]);
+        CGFloat deltaX = fabs(contentOffset.x - _sectionXOrigins[i] - _sectionWidths[i]/2.0f);
         
         if (deltaX < minDeltaX || section < 0) {
             section = i;

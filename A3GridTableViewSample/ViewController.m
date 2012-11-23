@@ -12,8 +12,8 @@
     NSMutableArray *numberOfRowsInSection;
     CGFloat dayheight;
 }
-@property UIImage *normalImage;
-@property UIImage *selectedImage;
+@property (nonatomic, retain) UIImage *normalImage;
+@property (nonatomic, retain)  UIImage *selectedImage;
 
 @end
 

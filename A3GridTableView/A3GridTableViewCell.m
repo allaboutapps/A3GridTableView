@@ -142,6 +142,8 @@
 }
 
 - (void)setBackgroundView:(UIView *)backgroundView{
+    [_backgroundView removeFromSuperview];
+    
     [backgroundView retain];
     [_backgroundView release];
     _backgroundView = backgroundView;
@@ -154,6 +156,8 @@
 }
 
 - (void)setContentView:(UIView *)contentView{
+    [_contentView removeFromSuperview];
+    
     [contentView retain];
     [_contentView release];
     _contentView = contentView;
@@ -167,6 +171,8 @@
 }
 
 - (void)setSelectedBackgroundView:(UIView *)selectedBackgroundView{
+    [_selectedBackgroundView removeFromSuperview];
+    
     [selectedBackgroundView retain];
     [_selectedBackgroundView release];
     _selectedBackgroundView = selectedBackgroundView;
@@ -180,6 +186,8 @@
 }
 
 - (void)setHighlightedBackgroundView:(UIView *)highlightedBackgroundView{
+    [_highlightedBackgroundView removeFromSuperview];
+    
     [highlightedBackgroundView retain];
     [_highlightedBackgroundView release];
     _highlightedBackgroundView = highlightedBackgroundView;

@@ -246,13 +246,30 @@ typedef enum {
 - (NSArray *)indexPathsForSelectedCells;
 
 /**
- @description Selects a given Cell at the indexPath.
+ @description Selects the Cell at the given sindexPath.
  @param indexPath Index Path of the cell to be selected.
  @param animated Whether this should be animated or not.
  @param scrollPosition Vertical position of the cell.
  @param alignment Hoprizontal position of the cell.
  */
-- (void)selectCellAtIndexPath:(NSIndexPath *)indexPath animated:(BOOL)animated scrollPosition:(UITableViewScrollPosition)scrollPosition cellAlignment:(A3GridTableViewCellAlignment)alignment;
+- (void)selectCellAtIndexPath:(NSIndexPath *)indexPath animated:(BOOL)animated;
+
+/**
+ @discussion Delects the Cell at the given indexPath.
+ @param indexPath Index Path of the cell to be deselected.
+ @param animated Whether this should be animated or not.
+ */
+- (void)deselectCellAtIndexPath:(NSIndexPath *)indexPath animated:(BOOL)animated;
+
+/**
+ @description scrolls to the Cell at the given indexPath.
+ @param indexPath IndexPath of the cell whcih will be scrolled to.
+ @param scrollPosition Vertical position of the cell.
+ @param alignment Hoprizontal position of the cell.
+ @param animated Whether this should be animated or not.
+ */
+- (void)scrollToCellAtIndexPath:(NSIndexPath *)indexPath atCellAlignment:(A3GridTableViewCellAlignment)alignment atScrollPosition:(UITableViewScrollPosition)scrollPosition animated:(BOOL)animated;
+
 
 /**
  @description Enables/disables selection. Default is YES.
@@ -286,11 +303,6 @@ typedef enum {
  @return Returns the indexPaths of the sections the visible Rect.
  */
 - (NSArray *)indexPathsForVisibleSections;
-
-
-/**
- */
-- (void)scrollToCellAtIndexPath:(NSIndexPath *)indexPath atCellAlignment:(A3GridTableViewCellAlignment)alignment atScrollPosition:(UITableViewScrollPosition)scrollPosition animated:(BOOL)animated;
 
 
 //===========================================

@@ -132,7 +132,6 @@
 - (NSInteger)_sectionIndexForContentOffset:(CGPoint)contentOffset;
 
 // selection
-- (void)_updateVisibleCellSelection;
 - (void)_deselectAllCells;
 - (void)_unhighlightAllCells;
 
@@ -835,38 +834,20 @@
         if (CGRectContainsPoint(cell.frame, touchPoint)) {
             // deselect cell
             if ([_selectedIndexPaths containsObject:cell.indexPath]) {
-                [_selectedIndexPaths removeObject:cell.indexPath];
-                
-                // call delegate if it responds
-                if ([self.delegate respondsToSelector:@selector(A3GridTableView:willDeselectCellAtIndexPath:)]) {
-                    [self.delegate A3GridTableView:self willDeselectCellAtIndexPath:cell.indexPath];
-                }
+                [self deselectCellAtIndexPath:cell.indexPath animated:YES];
             }
             // Select cell
             else{
-                [_selectedIndexPaths addObject:cell.indexPath];
-                
-                // call delegate if it responds
-                if ([self.delegate respondsToSelector:@selector(A3GridTableView:didSelectCellAtIndexPath:)]) {
-                    [self.delegate A3GridTableView:self didSelectCellAtIndexPath:cell.indexPath];
-                }
+                [self selectCellAtIndexPath:cell.indexPath animated:YES];
             }
         }
         else{
             // deselect not touched cell if multiple selection isn't enabled
             if (!self.allowsMultipleSelection && [_selectedIndexPaths containsObject:cell.indexPath]) {
-                [_selectedIndexPaths removeObject:cell.indexPath];
-                
-                // call delegate if it responds
-                if ([self.delegate respondsToSelector:@selector(A3GridTableView:willDeselectCellAtIndexPath:)]) {
-                    [self.delegate A3GridTableView:self willDeselectCellAtIndexPath:cell.indexPath];
-                }
+                [self deselectCellAtIndexPath:cell.indexPath animated:YES];
             }
         }
     }
-    
-    // update selections
-    [self _updateVisibleCellSelection];
 }
 
 //===========================================================================================
@@ -1031,23 +1012,80 @@
     return _selectedIndexPaths;
 }
 
-
-// !!!: not implemented
-- (void)selectCellAtIndexPath:(NSIndexPath *)indexPath animated:(BOOL)animated scrollPosition:(UITableViewScrollPosition)scrollPosition cellAlignment:(A3GridTableViewCellAlignment)alignment{
+- (void)selectCellAtIndexPath:(NSIndexPath *)indexPath animated:(BOOL)animated{
+    
+    // add index to selected indices
+    [_selectedIndexPaths addObject:indexPath];
+    
+    // set cell selection
+    for (A3GridTableViewCell *cell in [self visibleCells]) {
+        // select / deselect cell
+        if ([indexPath isEqual: cell.indexPath]) {
+            [cell setSelected:YES animated:animated];
+            break;
+        }
+    }
+    
+    // call delegate if it responds
+    if ([self.delegate respondsToSelector:@selector(A3GridTableView:didSelectCellAtIndexPath:)]) {
+        [self.delegate A3GridTableView:self didSelectCellAtIndexPath:indexPath];
+    }
     
 }
 
-
-- (void)_updateVisibleCellSelection{
+- (void)deselectCellAtIndexPath:(NSIndexPath *)indexPath animated:(BOOL)animated{
+    
+    // remove indexpath from selected indices
+    [_selectedIndexPaths removeObject:indexPath];
+    
+    // set cell selection
     for (A3GridTableViewCell *cell in [self visibleCells]) {
         // select / deselect cell
-        if ([_selectedIndexPaths containsObject:cell.indexPath]) {
-            [cell setSelected:YES animated:YES];
-        }
-        else{
-            [cell setSelected:NO animated:YES];
+        if ([indexPath isEqual: cell.indexPath]) {
+            [cell setSelected:NO animated:animated];
+            break;
         }
     }
+    
+    // call delegate if it responds
+    if ([self.delegate respondsToSelector:@selector(A3GridTableView:willDeselectCellAtIndexPath:)]) {
+        [self.delegate A3GridTableView:self willDeselectCellAtIndexPath:indexPath];
+    }
+}
+
+- (void)scrollToCellAtIndexPath:(NSIndexPath *)indexPath atCellAlignment:(A3GridTableViewCellAlignment)alignment atScrollPosition:(UITableViewScrollPosition)scrollPosition animated:(BOOL)animated{
+    // get frame of cell at the index
+    CGRect rectOfCellAtIndexPath = _cellFrames[indexPath.section][indexPath.row];
+    CGPoint newContentOffset = rectOfCellAtIndexPath.origin;
+    
+    // align horizontaly
+    switch (alignment) {
+        case A3GridTableViewCellAlignmentCenter:
+            newContentOffset.x = -self.frame.size.width/2.0f + rectOfCellAtIndexPath.size.width/2.0f;
+            break;
+        case A3GridTableViewCellAlignmentRight:
+            newContentOffset.x = -self.frame.size.width + rectOfCellAtIndexPath.size.width;
+            break;
+        case A3GridTableViewCellAlignmentLeft:
+        default:
+            break;
+    }
+    
+    // align vertically
+    switch (scrollPosition) {
+        case UITableViewScrollPositionMiddle:
+            newContentOffset.y = -self.frame.size.width/2.0 + rectOfCellAtIndexPath.size.width/2.0;
+            break;
+        case UITableViewScrollPositionBottom:
+            newContentOffset.y = -self.frame.size.width + rectOfCellAtIndexPath.size.width;
+            break;
+        case UITableViewScrollPositionTop:
+        default:
+            break;
+    }
+    
+    // set content offset
+    [self setContentOffset:newContentOffset animated:animated];
 }
 
 - (void)_deselectAllCells{
@@ -1129,42 +1167,6 @@
 
 - (NSArray *)indexPathsForVisibleSections{
     return [self indexPathsForSectionsInRect:[self visibleRect]];
-}
-
-
-- (void)scrollToCellAtIndexPath:(NSIndexPath *)indexPath atCellAlignment:(A3GridTableViewCellAlignment)alignment atScrollPosition:(UITableViewScrollPosition)scrollPosition animated:(BOOL)animated{
-    // get frame of cell at the index
-    CGRect rectOfCellAtIndexPath = _cellFrames[indexPath.section][indexPath.row];
-    CGPoint newContentOffset = rectOfCellAtIndexPath.origin;
-    
-    // align horizontaly
-    switch (alignment) {
-        case A3GridTableViewCellAlignmentCenter:
-            newContentOffset.x = -self.frame.size.width/2.0f + rectOfCellAtIndexPath.size.width/2.0f;
-            break;
-        case A3GridTableViewCellAlignmentRight:
-            newContentOffset.x = -self.frame.size.width + rectOfCellAtIndexPath.size.width;
-            break;
-        case A3GridTableViewCellAlignmentLeft:
-        default:
-            break;
-    }
-    
-    // align vertically
-    switch (scrollPosition) {
-        case UITableViewScrollPositionMiddle:
-            newContentOffset.y = -self.frame.size.width/2.0 + rectOfCellAtIndexPath.size.width/2.0;
-            break;
-        case UITableViewScrollPositionBottom:
-            newContentOffset.y = -self.frame.size.width + rectOfCellAtIndexPath.size.width;
-            break;
-        case UITableViewScrollPositionTop:
-        default:
-            break;
-    }
-    
-    // set content offset
-    [self setContentOffset:newContentOffset animated:animated];
 }
 
 // alignment

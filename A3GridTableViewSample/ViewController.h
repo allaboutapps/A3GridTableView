@@ -15,7 +15,7 @@
 }
 
 // reaload button
-@property (retain, nonatomic) IBOutlet UIButton *buttonReload;
+@property (strong, nonatomic) IBOutlet UIButton *buttonReload;
 - (IBAction)buttonReloadTouchUpInside:(id)sender;
 
 @end

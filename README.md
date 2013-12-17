@@ -4,9 +4,7 @@
 It has similar delegate methods to a `UITableView` and can be even used like one.  
 The difference is that the **A3GridTableView** aligns his section in collumns and not in one flow.
 
-It is written in *Objective-C* and works for all iOS applications.  
-ARC is not enabled for the project, but you can easily convert it to arc with the XCode built in ARC converter.  
-If you are too lazy for that, you can still set the `-fno-objc-arc` flag.
+It is written in *Objective-C* and works for all iOS applications and uses ARC.
 
 ##Video:
 ![A3GridTableView iPhone sample](https://dl.dropbox.com/u/9934540/aaa/A3GridTableViewSampleIPhone.gif "A3GridTableView iPhone Sample Video")
@@ -14,7 +12,7 @@ If you are too lazy for that, you can still set the `-fno-objc-arc` flag.
 
 
 ##Usage:
-Add the QuartzCore Framework and the **A3GridTableView** directory to your project.  
+
 Initialize a **A3GridTableView** like any other View by code or in the InterfaceBuilder.
 Set your ViewController as dataSource and delegate of the **A3GridTableView** and implement the required dataSource methods:
 
@@ -34,4 +32,4 @@ Feel free to fork and make pull requests! We are also very happy if you tell us 
 
 
 ![aaa - AllAboutApps](https://dl.dropbox.com/u/9934540/aaa/aaaLogo.png "aaa - AllAboutApps")  
-[© allaboutapps 2012](http://www.allaboutapps.at)
+[© allaboutapps 2013](http://www.allaboutapps.at)

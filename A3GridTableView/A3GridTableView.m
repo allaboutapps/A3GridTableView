@@ -49,8 +49,8 @@
     
     //=======================================================
     // Datasource and delegate
-    id<A3GridTableViewDataSource> _dataSource;
-    id<A3GridTableViewDelegate> _delegateGridTableView;
+    id<A3GridTableViewDataSource> __weak _dataSource;
+    id<A3GridTableViewDelegate> __weak _delegateGridTableView;
     
     //=======================================================
     // visible Cells
@@ -59,12 +59,12 @@
     NSMutableArray *_visibleIndexPaths;
     NSMutableArray *_visibleSectionIndexPaths;
     
-    /** Containers for unused cells
-        @description Holds all unused cells in NSSets keyed by the reuseIdentifiers of the cells
-        @usage Used by the dequeue() and _purge() methods
+    // Containers for unused cells
+    /**
+        @brief Holds all unused cells in NSSets keyed by the reuseIdentifiers of the cells. Used by the dequeue() and _purge() methods.
      */
-    NSMutableDictionary *_unusedHeaders;
-    NSMutableDictionary *_unusedCells;
+    NSCache *_unusedHeaders;
+    NSCache *_unusedCells;
     
     // selected Cells
     NSMutableArray *_selectedIndexPaths;
@@ -112,7 +112,7 @@
 - (CGFloat)_heightForHeaders;
 
 /**
- @description This method updates the Layout by building all frames and store them in cellFrames
+ @brief This method updates the Layout by building all frames and store them in cellFrames
  */
 - (void)_updateCellFrames;
 
@@ -126,7 +126,7 @@
 
 // alignment
 /**
- @description This method returns the section for a given contentOffset
+ @brief This method returns the section for a given contentOffset
  @return The section for the contentOffset. Returns -1 if none found
  */
 - (NSInteger)_sectionIndexForContentOffset:(CGPoint)contentOffset;
@@ -160,8 +160,8 @@
     _visibleSectionIndexPaths = [[NSMutableArray alloc] init];
     
     // unused Item Containers
-    _unusedHeaders = [[NSMutableDictionary alloc] init];
-    _unusedCells = [[NSMutableDictionary alloc] init];
+    _unusedHeaders = [[NSCache alloc] init];
+    _unusedCells = [[NSCache alloc] init];
     
     // layout helper
     _sectionWidths = NULL;
@@ -187,27 +187,11 @@
 //======================================
 // dealloc
 - (void)dealloc{
-    
-    // unused Item Containers
-    [_visibleHeaders release];
-    [_visibleCells release];
-    [_visibleIndexPaths release];
-    [_visibleSectionIndexPaths release];
-    
-    // unused Item Containers
-    [_unusedHeaders release];
-    [_unusedCells release];
-    
     // layout helper
     [self freeSectionWidths];
     [self freeSectionXOrigins];
     [self freeCellFrames];
     free(numberOfRowsInSection);
-    
-    // selection
-    [_selectedIndexPaths release];
-    
-    [super dealloc];
 }
 
 //======================================
@@ -446,10 +430,9 @@
         return;
     }
     
-    /*There won't be many dataSource integrity checks (aka. [respondsToSelector:]) here,
+    /*
+     There won't be many dataSource integrity checks (aka. [respondsToSelector:]) here,
      because most of the used methods are required by the dataSource!
-     So if a developer doesn't implement these, this code SHOULD crash.
-     Just like in a UITableView.
      */
     
     // whipe old info
@@ -690,8 +673,6 @@
         return;
     
     // memory stuff
-    [aDataSource retain];
-    [_dataSource release];
     _dataSource = aDataSource;
     
     // reload data
@@ -703,8 +684,6 @@
 - (void)setDelegate:(id<A3GridTableViewDelegate>)aDelegate{
     
     // memory stuff
-    [aDelegate retain];
-    [_delegateGridTableView release];
     _delegateGridTableView = aDelegate;
     
     // set scrollviewDelegate
@@ -866,7 +845,7 @@
     
     // get headerCell from set if set exists
     if (setFromReuseIdentifier) {
-        headerToDequeue = [[setFromReuseIdentifier anyObject] retain];
+        headerToDequeue = [setFromReuseIdentifier anyObject];
         if (headerToDequeue)
             [setFromReuseIdentifier removeObject:headerToDequeue];
     }
@@ -875,7 +854,7 @@
     [headerToDequeue prepareForReuse];
     
     // return dequeued header
-    return [headerToDequeue autorelease];
+    return headerToDequeue;
 }
 
 ///////////////
@@ -890,7 +869,7 @@
     
     // get cell from set if set exists
     if (setFromReuseIdentifier) {
-        cellToDequeue = [[setFromReuseIdentifier anyObject] retain];
+        cellToDequeue = [setFromReuseIdentifier anyObject];
         if (cellToDequeue)
             [setFromReuseIdentifier removeObject:cellToDequeue];
     }
@@ -899,7 +878,7 @@
     [cellToDequeue prepareForReuse];
     
     // return dequeued cell
-    return [cellToDequeue autorelease];
+    return cellToDequeue;
 }
 
 
@@ -918,7 +897,7 @@
     if (headerCell.reuseIdentifier) {
         
         // get Set for reuse identifier
-        NSMutableSet *setFromIdentifier = [[_unusedHeaders objectForKey:headerCell.reuseIdentifier] retain];
+        NSMutableSet *setFromIdentifier = [_unusedHeaders objectForKey:headerCell.reuseIdentifier];
         
         // make new set if there is none
         if (!setFromIdentifier) {
@@ -933,7 +912,6 @@
         [setFromIdentifier addObject:headerCell];
         
         // clean
-        [setFromIdentifier release];
     }
 }
 
@@ -950,7 +928,7 @@
     if (cell.reuseIdentifier) {
         
         // get Set for reuse identifier
-        NSMutableSet *setFromIdentifier = [[_unusedCells objectForKey:cell.reuseIdentifier] retain];
+        NSMutableSet *setFromIdentifier = [_unusedCells objectForKey:cell.reuseIdentifier];
         
         // make new set if there is none
         if (!setFromIdentifier) {
@@ -965,7 +943,6 @@
         [setFromIdentifier addObject:cell];
         
         // clean
-        [setFromIdentifier release];
     }
 }
 
@@ -1002,7 +979,7 @@
     NSIndexPath *selectedIndexPath = nil;
     
     if ([_selectedIndexPaths count] > 0) {
-        selectedIndexPath = [_selectedIndexPaths objectAtIndex:0];
+        selectedIndexPath = _selectedIndexPaths[0];
     }
     
     return selectedIndexPath;
@@ -1132,7 +1109,7 @@
         }
     }
     
-    return [indexPaths autorelease];
+    return indexPaths;
 }
 
 - (NSArray *)indexPathsForVisibleRect{
@@ -1162,7 +1139,7 @@
         posX += _sectionWidths[i];
     }
     
-    return [indexPaths autorelease];
+    return indexPaths;
 }
 
 - (NSArray *)indexPathsForVisibleSections{

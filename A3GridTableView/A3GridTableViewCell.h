@@ -51,27 +51,27 @@
 /**
  @description: The default background which is visible.
 */
-@property (nonatomic, retain) UIView *backgroundView;
+@property (nonatomic, strong) UIView *backgroundView;
 
 /**
  @description: The contenView holds all subviews of the cell. Use this View if you wan't to customize (add subviews) to the cell, rather than manipulating directly the cell.
  */
-@property (nonatomic, retain) UIView *contentView;
+@property (nonatomic, strong) UIView *contentView;
 
 /**
  @description: The selectedBackgroundView is visible when the cell is selected. It is shown above the backgroundView but below the contentView.
  */
-@property (nonatomic, retain) UIView *selectedBackgroundView;
+@property (nonatomic, strong) UIView *selectedBackgroundView;
 
 /**
  @description: The highlightedBackgroundView is visible when the cell is highlighted. It is shown above the backgroundView but below the contentView.
  */
-@property (nonatomic, retain) UIView *highlightedBackgroundView;
+@property (nonatomic, strong) UIView *highlightedBackgroundView;
 
 /**
  @description: The standard titleLabel. You can set it it nil if you don't need it.
  */
-@property (nonatomic, retain) UILabel *titleLabel;
+@property (nonatomic, strong) UILabel *titleLabel;
 
 
 //======================================================================
@@ -80,7 +80,7 @@
 /**
  @description: A string used to identify a cell that is reusable.
  */
-@property (nonatomic, retain) NSString *reuseIdentifier;
+@property (nonatomic, strong) NSString *reuseIdentifier;
 
 /**
  @description: If the cell is reusable (has a reuse identifier), this is called just before the cell is returned from the table view method [dequeueReusableCellWithIdentifier:].
@@ -91,7 +91,7 @@
 /**
  @description: The indexpath of the cell when it is visible. If the cell is not visible, the value is invalid and should not be trusted.
  */
-@property (nonatomic, retain) NSIndexPath *indexPath;
+@property (nonatomic, strong) NSIndexPath *indexPath;
 
 
 

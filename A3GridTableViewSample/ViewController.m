@@ -12,8 +12,8 @@
     NSMutableArray *numberOfRowsInSection;
     CGFloat dayheight;
 }
-@property (nonatomic, retain) UIImage *normalImage;
-@property (nonatomic, retain)  UIImage *selectedImage;
+@property (nonatomic, strong) UIImage *normalImage;
+@property (nonatomic, strong)  UIImage *selectedImage;
 
 @end
 
@@ -32,14 +32,14 @@
         [numberOfRowsInSection addObject:[NSNumber numberWithInt: arc4random()%60+1]];
     }
     
-    dayheight = 10000.0f;
+    dayheight = 1000.0f;
     
     // Initialize Grid View
     gridTableView = [[A3GridTableView alloc] initWithFrame:self.view.bounds];
     gridTableView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
     
     // images
-    self.normalImage = [UIImage imageNamed:@"cellBG-normal.png"];
+    self.normalImage = [UIImage imageNamed:@"cellBG-normal"];
     self.normalImage = [self.normalImage  resizableImageWithCapInsets:UIEdgeInsetsMake(14, 16, 18, 16)];
     self.selectedImage = [UIImage imageNamed:@"cellBG-highlighted"];
     self.selectedImage = [self.selectedImage  resizableImageWithCapInsets:UIEdgeInsetsMake(14, 16, 18, 16)];
@@ -67,15 +67,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)dealloc {
-    [gridTableView release];
-    [numberOfRowsInSection release];
-    [_buttonReload release];
-    
-    self.normalImage = nil;
-    self.selectedImage = nil;
-    [super dealloc];
-}
 
 - (void)viewDidUnload {
     [self setButtonReload:nil];
@@ -95,7 +86,7 @@
 }
 
 - (NSInteger)A3GridTableView:(A3GridTableView *) aGridTableView numberOfRowsInSection:(NSInteger) section{
-    NSNumber *n = [numberOfRowsInSection objectAtIndex:section];
+    NSNumber *n = numberOfRowsInSection[section];
     return [n integerValue];
 }
 
@@ -103,7 +94,7 @@
 - (A3GridTableViewCell *)A3GridTableView:(A3GridTableView *)aGridTableView headerForSection:(NSInteger)section{
     A3GridTableViewCell *headerCell;
     
-    headerCell = [[aGridTableView dequeueReusableHeaderWithIdentifier:@"headerID"] retain];
+    headerCell = [aGridTableView dequeueReusableHeaderWithIdentifier:@"headerID"];
     
     if (!headerCell) {
         headerCell = [[A3GridTableViewCell alloc] initWithReuseIdentifier:@"headerID"];
@@ -118,7 +109,7 @@
     
     headerCell.titleLabel.text = [NSString stringWithFormat:@"Header: %d", section];
     
-    return [headerCell autorelease];
+    return headerCell;
 }
 
 - (CGFloat)heightForHeadersInA3GridTableView:(A3GridTableView *)aGridTableView{
@@ -134,7 +125,7 @@
 // Cell handling
 - (A3GridTableViewCell *)A3GridTableView:(A3GridTableView *)aGridTableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     A3GridTableViewCell *cell;
-    cell = [[aGridTableView dequeueReusableCellWithIdentifier:@"cellID"] retain];
+    cell = [aGridTableView dequeueReusableCellWithIdentifier:@"cellID"];
     
     if (!cell) {
         cell = [[A3GridTableViewCell alloc] initWithReuseIdentifier:@"cellID"];
@@ -146,11 +137,11 @@
     }
     cell.titleLabel.text = [NSString stringWithFormat:@"Cell: %d-%d", indexPath.section, indexPath.row];
     
-    return [cell autorelease];
+    return cell;
 }
 
 - (CGFloat)A3GridTableView:(A3GridTableView *)aGridTableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    NSNumber *n = [numberOfRowsInSection objectAtIndex:indexPath.section];
+    NSNumber *n = numberOfRowsInSection[indexPath.section];
     return (int)(dayheight/n.integerValue);
 }
 
@@ -163,4 +154,5 @@
     dayheight = (arc4random()%10+2)*1000;
     [gridTableView reloadCellsWithViewAnimation:YES];
 }
+
 @end

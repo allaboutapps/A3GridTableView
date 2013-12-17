@@ -47,26 +47,26 @@
     self = [super init];
     if (self) {
         // Set the reuseIdentifier
-        _reuseIdentifier = [reuseIdentifier retain];
+        _reuseIdentifier = reuseIdentifier;
         
         // set up contentView
-        self.contentView = [[[UIView alloc] initWithFrame:self.bounds] autorelease];
+        self.contentView = [[UIView alloc] initWithFrame:self.bounds];
         self.contentView.backgroundColor = [UIColor clearColor];
         
         // set up Background
-        self.backgroundView = [[[UIView alloc] initWithFrame:self.bounds] autorelease];
+        self.backgroundView = [[UIView alloc] initWithFrame:self.bounds];
         self.backgroundView.backgroundColor = [UIColor clearColor];
         
         // set up selected BG
-        self.selectedBackgroundView = [[[UIView alloc] initWithFrame:self.bounds] autorelease];
+        self.selectedBackgroundView = [[UIView alloc] initWithFrame:self.bounds];
         self.selectedBackgroundView.backgroundColor = [UIColor clearColor];
         
         // set up highlighted BG
-        self.highlightedBackgroundView  = [[[UIView alloc] initWithFrame:self.bounds] autorelease];
+        self.highlightedBackgroundView  = [[UIView alloc] initWithFrame:self.bounds];
         self.highlightedBackgroundView.backgroundColor = [UIColor clearColor];
         
         // set up titleLabel
-        self.titleLabel = [[[UILabel alloc] init] autorelease];
+        self.titleLabel = [[UILabel alloc] init];
         self.titleLabel.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
         self.titleLabel.backgroundColor = [UIColor clearColor];
         self.titleLabel.baselineAdjustment = UIBaselineAdjustmentAlignCenters;
@@ -79,18 +79,6 @@
     return self;
 }
 
-- (void)dealloc{
-    [_titleLabel release];
-    [_reuseIdentifier release];
-    [_backgroundView release];
-    [_contentView release];
-    [_selectedBackgroundView release];
-    [_highlightedBackgroundView release];
-    [_reuseIdentifier release];
-    [_indexPath release];
-    
-    [super dealloc];
-}
 
 
 //===========================================================================================
@@ -144,8 +132,6 @@
 - (void)setBackgroundView:(UIView *)backgroundView{
     [_backgroundView removeFromSuperview];
     
-    [backgroundView retain];
-    [_backgroundView release];
     _backgroundView = backgroundView;
     
     _backgroundView.frame = self.bounds;
@@ -158,8 +144,6 @@
 - (void)setContentView:(UIView *)contentView{
     [_contentView removeFromSuperview];
     
-    [contentView retain];
-    [_contentView release];
     _contentView = contentView;
     
     _contentView.frame = self.bounds;
@@ -173,8 +157,6 @@
 - (void)setSelectedBackgroundView:(UIView *)selectedBackgroundView{
     [_selectedBackgroundView removeFromSuperview];
     
-    [selectedBackgroundView retain];
-    [_selectedBackgroundView release];
     _selectedBackgroundView = selectedBackgroundView;
     
     _selectedBackgroundView.frame = self.bounds;
@@ -188,8 +170,6 @@
 - (void)setHighlightedBackgroundView:(UIView *)highlightedBackgroundView{
     [_highlightedBackgroundView removeFromSuperview];
     
-    [highlightedBackgroundView retain];
-    [_highlightedBackgroundView release];
     _highlightedBackgroundView = highlightedBackgroundView;
     
     _highlightedBackgroundView.frame = self.bounds;

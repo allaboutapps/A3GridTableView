@@ -54,66 +54,66 @@ typedef enum {
 #pragma mark - DataSource for the gridTableView
 //==========================================================================================
 /**
- @description The Controller of a A3GridTableView has to be its DataSource and implement the required methods to work.
+ @brief The Controller of a A3GridTableView has to be its DataSource and implement the required methods to work.
  */
 @protocol A3GridTableViewDataSource <NSObject>
 
 @required
 /**
  @param gridTableView The gridTableView which asks for the number of sections.
- @returns Returns the GridTableView the number of sections. A section will be presented as a custom column in the GridTableView.
+ @return Returns the GridTableView the number of sections. A section will be presented as a custom column in the GridTableView.
  */
 - (NSInteger)numberOfSectionsInA3GridTableView:(A3GridTableView *) gridTableView;
 
 /**
  @param gridTableView The gridTableView which asks for the number of items in a section.
  @param section The section of the GridTableView for which the dataSource should return the number of rows.
- @returns Returns the GridTableView the number of sections. A section will be presented as a custom column in the GridTableView.
+ @return return the GridTableView the number of sections. A section will be presented as a custom column in the GridTableView.
  */
 - (NSInteger)A3GridTableView:(A3GridTableView *) tableView numberOfRowsInSection:(NSInteger) section;
 
 /**
  @param gridTableView The gridTableView which asks for a cell.
  @param section The indexPath of the cell.
- @returns Returns the GridTableView a A3GridTableViewCell for the cell at the indexPath. Must not be nil.
+ @return return the GridTableView a A3GridTableViewCell for the cell at the indexPath. Must not be nil.
  */
 - (A3GridTableViewCell *)A3GridTableView:(A3GridTableView *)gridTableView cellForRowAtIndexPath:(NSIndexPath *)indexPath;
 
 @optional
 /**
- @description Called before the cell will be displayed or updated. Default is 44 points.
+ @brief Called before the cell will be displayed or updated. Default is 44 points.
  @param gridTableView The gridTableView which asks for the Height for a cell.
  @param indexPath The indexPath of the cell
- @returns Returns the height for the Cell at the indexPath.
+ @return return the height for the Cell at the indexPath.
  */
 - (CGFloat)A3GridTableView:(A3GridTableView *) gridTableView heightForHeaders:(NSIndexPath *) indexPath;
 
 /**
  @param gridTableView The gridTableView which asks for a header.
  @param section The section of the header.
- @returns Returns the GridTableView a A3GridTableViewCell as a Header. If nil or not implemented, there will be no header in the section.
+ @return return the GridTableView a A3GridTableViewCell as a Header. If nil or not implemented, there will be no header in the section.
  */
 - (A3GridTableViewCell *)A3GridTableView:(A3GridTableView *) gridTableView headerForSection:(NSInteger) section;
 
 /**
  @param gridTableView The gridTableView which asks for the Height.
- @returns Returns the Height for all Headers in the gridTableView.
- @description Called once for all headers in reloadData(). Default is 44 points.
+ @return return the Height for all Headers in the gridTableView.
+ @brief Called once for all headers in reloadData(). Default is 44 points.
  */
 - (CGFloat)heightForHeadersInA3GridTableView:(A3GridTableView *) gridTableView;
 
 /**
  @param gridTableView The gridTableView which asks for the width for a section.
- @returns Returns the Width for the section.
- @description Called once for all headers in reloadData(). Default is the Screenwidth.
+ @return return the Width for the section.
+ @brief Called once for all headers in reloadData(). Default is the Screenwidth.
  */
 - (CGFloat)A3GridTableView:(A3GridTableView *) gridTableView widthForSection:(NSInteger) section;
 
 /**
  @param gridTableView The gridTableView which asks for the Height for a cell.
  @param indexPath The indexPath of the cell
- @returns Returns the height for the Cell at the indexPath.
- @description Called before the cell will be displayed or updated. Default is 44 points.
+ @return return the height for the Cell at the indexPath.
+ @brief Called before the cell will be displayed or updated. Default is 44 points.
  */
 - (CGFloat)A3GridTableView:(A3GridTableView *) gridTableView heightForRowAtIndexPath:(NSIndexPath *) indexPath;
 
@@ -124,7 +124,7 @@ typedef enum {
 #pragma mark - Delegate for the gridTableView
 //==========================================================================================
 /*
- @description The GridTableViewDelegate extends the UIScrollViewDelegate. The Controller which acts as a delegate for a GridTableView can implement methods similar to a UITableView.
+ @brief The GridTableViewDelegate extends the UIScrollViewDelegate. The Controller which acts as a delegate for a GridTableView can implement methods similar to a UITableView.
  */
 @protocol A3GridTableViewDelegate <UIScrollViewDelegate, NSObject>
 
@@ -134,14 +134,14 @@ typedef enum {
 /**
  @param gridTableView The gridTableView which calls the delegate.
  @param section The index of the section which will be displayed.
- @description Called before the section will be displayed.
+ @brief Called before the section will be displayed.
  */
 - (void) A3GridTableView:(A3GridTableView *)gridTableView willDisplaySection:(NSInteger) section;
 
 /**
  @param gridTableView The gridTableView which calls the delegate.
  @param section The index of the section which was selected.
- @description Called when the section is selected.
+ @brief Called when the section is selected.
  */
 - (void) A3GridTableView:(A3GridTableView *)gridTableView didSelectHeaderAtSection:(NSInteger) section;
 
@@ -151,14 +151,14 @@ typedef enum {
 /**
  @param gridTableView The gridTableView which calls the delegate.
  @param section The indexPath of the Cell which will be displayed.
- @description Called before the Cell will be displayed.
+ @brief Called before the Cell will be displayed.
  */
 - (void) A3GridTableView:(A3GridTableView *)gridTableView willDisplayCellAtIndexPath:(NSIndexPath *) indexPath;
 
 /**
  @param gridTableView The gridTableView which calls the delegate. If not implemented, every cell is selectable.
  @param section The indexPath of the Cell which will be selected.
- @description Called before the Cell is selected.
+ @brief Called before the Cell is selected.
  @return Whether the cell is selectable or not
  */
 - (BOOL) A3GridTableView:(A3GridTableView *)gridTableView canSelectCellAtIndexPath:(NSIndexPath *) indexPath;
@@ -166,14 +166,14 @@ typedef enum {
 /**
  @param gridTableView The gridTableView which calls the delegate.
  @param section The indexPath of the Cell which was selected.
- @description Called when the Cell is selected.
+ @brief Called when the Cell is selected.
  */
 - (void) A3GridTableView:(A3GridTableView *)gridTableView didSelectCellAtIndexPath:(NSIndexPath *) indexPath;
 
 /**
  @param gridTableView The gridTableView which calls the delegate.
  @param section The indexPath of the Cell which will be deselected.
- @description Called before the Cell will be selected.
+ @brief Called before the Cell will be selected.
  */
 - (void) A3GridTableView:(A3GridTableView *)gridTableView willDeselectCellAtIndexPath:(NSIndexPath *) indexPath;
 
@@ -184,7 +184,7 @@ typedef enum {
 #pragma mark - Actual TableView
 //==========================================================================================
 /**
- @Description The GridTableView displays his Cells like a UITableView but in a grid based layout where the sections are represented as columns.
+ @brief The GridTableView displays his Cells like a UITableView but in a grid based layout where the sections are represented as columns.
  */
 @interface A3GridTableView : UIScrollView <UIScrollViewDelegate>
 
@@ -192,17 +192,17 @@ typedef enum {
 #pragma mark datasource and delegate
 //===========================================
 // DataSource
-@property (nonatomic, assign) id<A3GridTableViewDataSource> dataSource;
+@property (nonatomic, weak) id<A3GridTableViewDataSource> dataSource;
 /**
- @Description Sets the DataSource of the GridTableView. By doing this, the GridTableView will automatically reload his data.
+ @brief Sets the DataSource of the GridTableView. By doing this, the GridTableView will automatically reload his data.
  @param aDataSource The ViewController which acts as the DataSource for the GridTableView.
  */
 - (void)setDataSource:(id<A3GridTableViewDataSource>)aDataSource;
 
 // Delegate
-@property (nonatomic, assign) id<A3GridTableViewDelegate> delegate;
+@property (nonatomic, weak) id<A3GridTableViewDelegate> delegate;
 /**
- @Description Sets the Delegate of the GridTableView.
+ @brief Sets the Delegate of the GridTableView.
  @param aDelegate The ViewController which acts as the Delegate for the GridTableView.
  */
 - (void)setDelegate:(id<A3GridTableViewDelegate>)aDelegate;
@@ -234,19 +234,19 @@ typedef enum {
 //===========================================
 
 /**
- @description returns the indexPath of the currently selected cell.
- @return returns nil if none item is selected.
+ @brief return the indexPath of the currently selected cell.
+ @return return nil if none item is selected.
  */
 - (NSIndexPath *)indexPathForSelectedCell;
 
 /**
- @description returns the indexPaths for all selected items. Empty array if no item is selected.
+ @brief returns the indexPaths for all selected items. Empty array if no item is selected.
  @return returns nil if none item is selected.
  */
 - (NSArray *)indexPathsForSelectedCells;
 
 /**
- @description Selects the Cell at the given sindexPath.
+ @brief Selects the Cell at the given sindexPath.
  @param indexPath Index Path of the cell to be selected.
  @param animated Whether this should be animated or not.
  @param scrollPosition Vertical position of the cell.
@@ -262,7 +262,7 @@ typedef enum {
 - (void)deselectCellAtIndexPath:(NSIndexPath *)indexPath animated:(BOOL)animated;
 
 /**
- @description scrolls to the Cell at the given indexPath.
+ @brief scrolls to the Cell at the given indexPath.
  @param indexPath IndexPath of the cell whcih will be scrolled to.
  @param scrollPosition Vertical position of the cell.
  @param alignment Hoprizontal position of the cell.
@@ -272,12 +272,12 @@ typedef enum {
 
 
 /**
- @description Enables/disables selection. Default is YES.
+ @brief Enables/disables selection. Default is YES.
  */
 @property (nonatomic, assign) BOOL allowsSelection;
 
 /**
- @description Enables/disables multiple selection. Default is NO.
+ @brief Enables/disables multiple selection. Default is NO.
  */
 @property (nonatomic, assign) BOOL allowsMultipleSelection;
 
@@ -315,14 +315,13 @@ typedef enum {
 #pragma mark paging
 //===========================================
 /**
-    @desciption Sets the position of the paging when paging is enabled.
-    @default A3GridTableViewPagingPositionCenter
+    @brief Sets the position of the paging when paging is enabled.Default is A3GridTableViewPagingPositionCenter.
  */
 @property(nonatomic, assign) A3GridTableViewCellAlignment pagingPosition;
 
 /**
- @desciption A Boolean value that determines whether paging is enabled for the A3GridTableView. If the value of this property is YES, the scroll view alligns his section defined by pagingPosition when the user scrolls.
- @default  The default value is NO.
+ @brief A Boolean value that determines whether paging is enabled for the A3GridTableView.
+ @discussion If the value of this property is YES, the scroll view alligns his section defined by pagingPosition when the user scrolls. The default value is NO.
  */
 @property(nonatomic, getter = isGridTableViewPagingEnabled) BOOL gridTableViewPagingEnabled;
 - (BOOL)isGridTableViewPagingEnabled;

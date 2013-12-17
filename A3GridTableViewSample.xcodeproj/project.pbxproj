@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8808829A165F8A0C00CC71CE /* cellBG-highlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = 88088298165F8A0C00CC71CE /* cellBG-highlighted.png */; };
-		8808829B165F8A0C00CC71CE /* cellBG-normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 88088299165F8A0C00CC71CE /* cellBG-normal.png */; };
 		8897C0EE16240F4200DABEDF /* A3GridTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8897C0EB16240F4200DABEDF /* A3GridTableView.m */; };
 		8897C0EF16240F4200DABEDF /* A3GridTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8897C0ED16240F4200DABEDF /* A3GridTableViewCell.m */; };
 		88BDCC411615CD2E00BF7A03 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88BDCC401615CD2E00BF7A03 /* UIKit.framework */; };
@@ -17,16 +15,12 @@
 		88BDCC4B1615CD2E00BF7A03 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 88BDCC491615CD2E00BF7A03 /* InfoPlist.strings */; };
 		88BDCC4D1615CD2E00BF7A03 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 88BDCC4C1615CD2E00BF7A03 /* main.m */; };
 		88BDCC511615CD2E00BF7A03 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 88BDCC501615CD2E00BF7A03 /* AppDelegate.m */; };
-		88BDCC531615CD2E00BF7A03 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 88BDCC521615CD2E00BF7A03 /* Default.png */; };
-		88BDCC551615CD2E00BF7A03 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 88BDCC541615CD2E00BF7A03 /* Default@2x.png */; };
-		88BDCC571615CD2E00BF7A03 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 88BDCC561615CD2E00BF7A03 /* Default-568h@2x.png */; };
 		88BDCC5A1615CD2E00BF7A03 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88BDCC591615CD2E00BF7A03 /* ViewController.m */; };
 		88BDCC5D1615CD2E00BF7A03 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88BDCC5B1615CD2E00BF7A03 /* ViewController.xib */; };
+		88FFA0481860549400E12677 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88FFA0471860549400E12677 /* Images.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		88088298165F8A0C00CC71CE /* cellBG-highlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cellBG-highlighted.png"; sourceTree = "<group>"; };
-		88088299165F8A0C00CC71CE /* cellBG-normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cellBG-normal.png"; sourceTree = "<group>"; };
 		8897C0EA16240F4200DABEDF /* A3GridTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = A3GridTableView.h; sourceTree = "<group>"; };
 		8897C0EB16240F4200DABEDF /* A3GridTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = A3GridTableView.m; sourceTree = "<group>"; };
 		8897C0EC16240F4200DABEDF /* A3GridTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = A3GridTableViewCell.h; sourceTree = "<group>"; };
@@ -41,12 +35,10 @@
 		88BDCC4E1615CD2E00BF7A03 /* A3GridTableViewSample-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "A3GridTableViewSample-Prefix.pch"; sourceTree = "<group>"; };
 		88BDCC4F1615CD2E00BF7A03 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		88BDCC501615CD2E00BF7A03 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		88BDCC521615CD2E00BF7A03 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		88BDCC541615CD2E00BF7A03 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		88BDCC561615CD2E00BF7A03 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		88BDCC581615CD2E00BF7A03 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		88BDCC591615CD2E00BF7A03 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		88BDCC5C1615CD2E00BF7A03 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
+		88FFA0471860549400E12677 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +102,7 @@
 				88BDCC591615CD2E00BF7A03 /* ViewController.m */,
 				88BDCC5B1615CD2E00BF7A03 /* ViewController.xib */,
 				8897C0E916240F4200DABEDF /* A3GridTableView */,
+				88FFA0471860549400E12677 /* Images.xcassets */,
 				88BDCC471615CD2E00BF7A03 /* Supporting Files */,
 			);
 			path = A3GridTableViewSample;
@@ -118,15 +111,10 @@
 		88BDCC471615CD2E00BF7A03 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				88088298165F8A0C00CC71CE /* cellBG-highlighted.png */,
-				88088299165F8A0C00CC71CE /* cellBG-normal.png */,
 				88BDCC481615CD2E00BF7A03 /* A3GridTableViewSample-Info.plist */,
 				88BDCC491615CD2E00BF7A03 /* InfoPlist.strings */,
 				88BDCC4C1615CD2E00BF7A03 /* main.m */,
 				88BDCC4E1615CD2E00BF7A03 /* A3GridTableViewSample-Prefix.pch */,
-				88BDCC521615CD2E00BF7A03 /* Default.png */,
-				88BDCC541615CD2E00BF7A03 /* Default@2x.png */,
-				88BDCC561615CD2E00BF7A03 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -183,12 +171,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				88BDCC4B1615CD2E00BF7A03 /* InfoPlist.strings in Resources */,
-				88BDCC531615CD2E00BF7A03 /* Default.png in Resources */,
-				88BDCC551615CD2E00BF7A03 /* Default@2x.png in Resources */,
-				88BDCC571615CD2E00BF7A03 /* Default-568h@2x.png in Resources */,
+				88FFA0481860549400E12677 /* Images.xcassets in Resources */,
 				88BDCC5D1615CD2E00BF7A03 /* ViewController.xib in Resources */,
-				8808829A165F8A0C00CC71CE /* cellBG-highlighted.png in Resources */,
-				8808829B165F8A0C00CC71CE /* cellBG-normal.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,6 +263,9 @@
 		88BDCC611615CD2E00BF7A03 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -296,6 +283,9 @@
 		88BDCC621615CD2E00BF7A03 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
